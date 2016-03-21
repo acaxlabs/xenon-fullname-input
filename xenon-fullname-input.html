@@ -1,0 +1,88 @@
+﻿<link rel="import" href="../polymer/polymer.html" />
+<link rel="import" href="../paper-input/paper-input.html" />
+<!--
+    @group Xenon Elements
+    @element xenon-fullname-input
+    @demo demo/index.html
+-->
+<dom-module id="xenon-fullname-input">
+    <template>
+        <paper-input-container id="container" invalid="{{invalid}}">
+            <label style="left:40px;" hidden$="[[!label]]">[[label]]</label>
+            <div class="horizontal layout">
+                <input is="iron-input"
+                       id="input"
+                       class="flex"
+                       aria-labelledby$="[[_ariaLabelledBy]]"
+                       aria-describedby$="[[_ariaDescribedBy]]"
+                       required$="[[required]]"
+                       bind-value="{{value}}"
+                       name$="[[name]]"
+                       disabled$="[[disabled]]"
+                       invalid="{{invalid}}"
+                       autofocus$="[[autofocus]]"
+                       inputmode$="[[inputmode]]"
+                       placeholder$="[[placeholder]]"
+                       readonly$="[[readonly]]"
+                       pattern$="[[pattern]]"
+                       maxlength$="[[length]]" 
+                       prevent-invalid-input="[[preventInvalidInput]]"
+                       allowed-pattern="[[allowedPattern]]">
+            </div>
+            <template is="dom-if" if="[[errorMessage]]">
+                <paper-input-error id="error">[[errorMessage]]</paper-input-error>
+            </template>
+        </paper-input-container>
+    </template>
+    <script>
+        Polymer({
+            is: "xenon-fullname-input",
+            properties: {
+                value: { type: String, notify: true, value: "" },
+                firstname: { type: String, notify: true, value: "" },
+                middlename: { type: String, notify: true, value: "" },
+                lastname: { type: String, notify: true, value: "" },
+            },
+            behaviors: [
+              Polymer.PaperInputBehavior,
+              Polymer.IronValidatableBehavior,
+              Polymer.IronFormElementBehavior
+            ],
+            fullnamesplit: function () {
+                var fullname = this.value.trim();
+                var temp = fullname.split(" ");
+
+                var firstName = "";
+                var middleName = "";
+                var lastName = "";
+
+                if (temp.length < 3) {
+                    firstName = temp[0];
+                    lastName = temp[1];
+                }
+                else {
+                    firstName = temp[0];
+                    middleName = temp[1];
+                    lastName = temp[2];
+                }
+                
+                this.set("firstname", firstName);
+                this.set("middlename", middleName);
+                this.set("lastname", lastName);
+
+                console.log("fistname: " + this.firstname);
+                console.log("middlename: " + this.middlename);
+                console.log("lastname: " + this.lastname);
+            },
+            validate: function () {
+                if (this.value.split(" ").length < 2) {
+                    this.set("invalid", true);
+                    return false;
+                }
+                this.fullnamesplit();
+                console.log(this.$.input.validate());
+                return this.$.input.validate();
+            }
+        })
+    </script>
+</dom-module>

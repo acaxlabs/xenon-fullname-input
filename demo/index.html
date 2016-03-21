@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../xenon-fullname-input.html" />
+
+    <xenon-fullname-input id="name" allowed-pattern="[A-Z a-z]" prevent-invalid-input label="Full Name" error-message="First name and last name are required" required></xenon-fullname-input>
+   <br />
+     <button onclick="check()">click</button>
+
+    <script>
+        function check() {
+            var ele = document.getElementById("name");
+            ele.validate();
+        }
+    </script>
+</body>
+</html>

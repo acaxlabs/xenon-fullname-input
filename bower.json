@@ -1,0 +1,28 @@
+{
+  "name": "xenon-fullname-input",
+  "version": "1.0",
+  "description": "one input field splits value into first, middle, and last name",
+  "authors": [
+    "ACA[X]Labs"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "router"
+  ],
+  "main": "xenon-fullname-input.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BenefitGeek/XenonFullnameInput.git"
+  },
+  "license": "https://github.com/BenefitGeek/XenonFullnameInput/blob/master/LICENSE.txt",
+  "homepage": "https://github.com/BenefitGeek/XenonFullnameInput",
+  "ignore": [],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^1.2.0",
+		"paper-input": "PolymerElements/paper-input#^1.0.15"
+    },
+     "devDependencies": {
+  }
+}

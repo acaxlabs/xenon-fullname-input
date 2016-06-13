@@ -14,10 +14,10 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/BenefitGeek/XenonFullnameInput.git"
+    "url": "git://github.com/acaxlabs/xenon-fullname-input.git"
   },
-  "license": "https://github.com/BenefitGeek/XenonFullnameInput/blob/master/LICENSE.txt",
-  "homepage": "https://github.com/BenefitGeek/XenonFullnameInput",
+  "license": "https://github.com/acaxlabs/xenon-fullname-input/blob/master/LICENSE.txt",
+  "homepage": "https://github.com/acaxlabs/xenon-fullname-input",
   "ignore": [],
     "dependencies": {
         "polymer": "Polymer/polymer#^1.2.0",

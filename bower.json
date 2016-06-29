@@ -8,7 +8,10 @@
   "keywords": [
     "web-components",
     "polymer",
-    "router"
+    "name",
+    "input",
+    "fullname",
+    "form"
   ],
   "main": "xenon-fullname-input.html",
   "private": true,
